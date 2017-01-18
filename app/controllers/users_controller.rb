@@ -7,12 +7,9 @@ class UsersController < ApplicationController
    @user = User.find(params[:id])
   end
   
-  def new
-    @user = User.new
-  end
-  
-  def edit
-  end
+ def edit
+  @user = User.find(params[:id])
+end
   
  def update
   @user = User.find(params[:id])
