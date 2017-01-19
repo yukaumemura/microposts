@@ -2,3 +2,24 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
+<p class="bg-primary text-left">現在のプロフィール</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+      
+      <div class="form-group">
+            <%= f.label :area ,class:"control-label" %>
+            <div class="col-xs-5"><%= @user.area %></div>
+        </div>
+      <div class="form-group">
+             <%= f.label :profile,class:"control-label" %>
+            <div class="col-xs-5"><%= @user.profile %></div>
+        </div>
+      <div class="form-group">
+             <%= f.label :email,class:"control-label" %>
+            <div class="col-xs-5"> <%= @user.email %></div>
+        </div>
+    <% end %>
+    </div>
+  </div>
