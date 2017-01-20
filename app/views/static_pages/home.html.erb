@@ -1,17 +1,21 @@
 <h1>Lesson7</h1>
 <h3>ツイッタークローン</h3>
 
-<div class="panel panel-primary">
-  <div class="panel-heading">課題：ユーザーのプロフィール更新</div>
-  <div class="panel-body">製作条件</div>
-  <ul class="list-group">
-      <li class="list-group-item">レッスン7-1～7-6まで出来たら動作確認と新規ブランチ作成（名前はuser-profile）git branch user-profile </li>
-      <li class="list-group-item">ユーザーがログインできるだけでなく、Twitterのように基本情報（プロフィール、メールアドレス、地域など）を更新できるようにしてください。</li>
-      <li class="list-group-item">基本情報の編集画面はUsersControllerのeditに、更新処理はupdateにそれぞれアクションを割り当て</li>
-      <li class="list-group-item">基本情報の編集と更新は、ログインしているユーザーが、自分のもののみできるようにします。</li>
-      <li class="list-group-item">完成したらGitHubにブランチをプッシュ</li>
-      <li class="list-group-item">リポジトリ名(microposts)とブランチ名(user-profile)を選択</li>  
-      <li class="list-group-item">※ 課題提出後はmasterブランチに戻って作業を行ってください。</li> 
-      <li class="list-group-item">※ コードレビュー合格後に、user-profileブランチをmasterブランチにマージ</li> 
-  </ul>
-</div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Microposts</h1>
+
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
