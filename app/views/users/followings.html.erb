@@ -1,0 +1,6 @@
+<h1 class="followfollower">followings user lists</h1>
+<% @followings.each do |user| %>
+   <%= gravatar_for(user) %>
+   <%= user.name %>
+   <br>
+<% end %>
