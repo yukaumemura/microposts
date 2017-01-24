@@ -3,17 +3,18 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
+        <%= @user.name %> </h1>
+         <h1>Microposts (<%= @user.microposts.count %>) </h1>
     </section>
+    　　<ol class="breadcrumb">
+        <li><%= link_to "ツイート", @user %></li>
+        <li><%= link_to "フォロー", followings_user_path(@user) %></li>
+        <li><%= link_to "フォロワー", followers_user_path(@user) %></li>
+      </ol>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts"><%= render @microposts %></ol>
-      <ol class="microposts"><a href="https://techacademy-umemurayuka.c9users.io/users/1" target="_blank">フォロワー</a></ol>
-      <ol class="microposts"><a href="example.html" target="_blank">フォロー</a></ol>
-    <% end %>
+    　<ol class="microposts"><%= render @microposts %></ol>
   </div>
 </div>
+

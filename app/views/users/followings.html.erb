@@ -1,14 +1,7 @@
 <h1 class="followfollower">followings user lists</h1>
-
-<table>
-<tr>
-<td>lists</td>
-</tr>
-<tr>
-<td><% @followings.each do |user| %>
-   <%= gravatar_for(user) %>
-   <%= user.name %>
-   </td>
-</tr>
-</table>
+<p>user/followings.html.erb</p>
+<% @followings.each do |user| %>
+        <%= gravatar_for(user) %>
+        <%= user.name %>
+       
 <% end %>
