@@ -1,3 +1,4 @@
+<li><%= link_to "UserProfile", current_user %></li>
 <h1 class="followfollower">followings user lists</h1>
 <% @followings.each do |user| %>
    <%= gravatar_for(user) %>
