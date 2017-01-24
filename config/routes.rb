@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shops
   get 'info/kadai'
 
   root to: 'static_pages#home'
