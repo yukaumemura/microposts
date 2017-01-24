@@ -1,57 +1,60 @@
-<h1>課題：フォロー、フォロワーの一覧</h1>
 
-<a>https://techacademy.jp/my/rails/twitter-clone#chapter-10</a>
+<h2>レッスン７　課題：オリジナル機能追加とHerokuへのデプロイ</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">製作条件</div>
+</div>
 <table class="table table-bordered">
-<caption>製作条件</caption>
-<tr>
-<th class="success">番号</th>
-<th class="success">内容</th>
-<th class="success">コマンド/備考</th>
-</tr>
-<tr>
-<td>1</td>
-<td>ここまで出来たら動作確認し動作確認ができたら新しいブランチを作成（名前はfollowings-followers）</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>各ユーザーがフォローしているユーザーと、<br>各ユーザーをフォローされているユーザーの一覧を表示するページを作成</td>
-<td>表示はTwitterを参考</td>
-</tr>
-<tr>
-<td>3</td>
-<td>UsersControllerのfollowingsにフォローしているユーザーを、<br>followersにフォローされているユーザーを表示するメソッドを実装</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>フォロー、フォロワーの一覧ページの実装後に、フォロー、フォロワーの一覧リンクもユーザープロフィールページに設置</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>完成したらGitHubにブランチをプッシュ</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>リポジトリ名(microposts)とブランチ名(followings-followers)を選択</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>コメント追加提出</td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>課題提出後はmasterブランチに戻って作業を行ってください。</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>コードレビューで合格になった後に、followings-followersブランチをmasterブランチにマージ</td>
-<td></td>
-</tr>
+	<tbody>
+		<tr>
+			<th  class="success">番号</th>
+			<th  class="success">内容</th>
+			<th  class="success">コマンド/備考</th>
+		</tr>
+		<tr>
+			<td>１</td>
+			<td>ここまで出来たら動作確認し、新しいブランチを作成（名前は、microposts-heroku）</td>
+			<td>git checkout -b microposts-heroku</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>micropostsに、オリジナルのmicropostsにない機能を追加してカスタマイズしてください。<br>
+			    カスタマイズの内容はデザインだけなく、Rubyのコードが必要な、独自性のある機能追加が好ましい</td>
+			<td>この後のチャプターの「拡張してみよう」を参考</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>カスタマイズしたアプリケーションをHerokuにアップロードして動かしてください。</td>
+			<td>動かし方はメッセージボードのレッスンなどを参考</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>完成したらGitHubにブランチをプッシュ</td>
+			<td>git init<br>git commit -m "first commit"<br>git remote add origin https://github.com/yukaumemura/microposts.git</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>リポジトリ名(microposts)とブランチ名(microposts-heroku)を選択</td>
+			<td>git push microposts microposts-heroku<br>yukaumemura</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>コメントに必ずアプリケーションHerokuのURLと実装したオリジナル機能の内容を記載提出</td>
+			<td> 必ずアプリケーションのHerokuURLにアクセスして、オリジナル機能の動作確認</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>課題提出後はmasterブランチに戻って作業を行ってください。</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>(提出時の注意)提出フォームの項目にある「動作確認用URL」には「HerokuのURL」を記載</td>
+			<td></td>
+		<tr>
+			<td>8</td>
+			<td>コードレビュー合格後にmicroposts-herokuブランチをmasterブランチにマージ</td>
+			<td>git checkout microposts-heroku<br>git merge master</td>
+		</tr>
+	</tbody>
 </table>
 
