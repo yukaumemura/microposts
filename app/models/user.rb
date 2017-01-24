@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
     following_users.include?(other_user)
   end
   
+  # 10.1 タイムラインを取得するメソッドの追加
    def feed_items
     Micropost.where(user_id: following_user_ids + [self.id])
   end
