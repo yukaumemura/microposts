@@ -28,7 +28,7 @@ end
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "ログインされました"
+      flash[:success] = "users in"
       redirect_to @user
     else
       render 'new'
