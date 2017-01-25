@@ -24,6 +24,9 @@ class User < ActiveRecord::Base
                                      
   has_many :following_users, through: :following_relationships, source: :followed
   
+   has_many :clips, dependent: :destroy #この行を追記することで関連付くイベントが削除されるとclipも削除されます。
+   has_many :events, through: :clips
+  
    # 他のユーザーをフォローする
   def follow(other_user)
     following_relationships.find_or_create_by(followed_id: other_user.id)

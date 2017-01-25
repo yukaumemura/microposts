@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :shops
-  get 'info/kadai'
-
+  get 'info/kadai(.:format)'
+  
   root to: 'static_pages#home'
   get    'signup', to: 'users#new'
   get    'login' , to: 'sessions#new'
@@ -19,4 +18,11 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :info
   
+   resources :events do
+    member do
+      post "add", to: "clips#create"
+    end
+  end
+
+  resources :clips, only: [:destroy]
 end

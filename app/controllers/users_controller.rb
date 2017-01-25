@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    #@user = User.order(:name).page params[:page]
   def new
     @user = User.new
   end

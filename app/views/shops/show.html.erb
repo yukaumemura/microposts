@@ -20,5 +20,6 @@
   <%= @shop.tel %>
 </p>
 
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<%= link_to 'Edit', edit_shop_path(@shop) %> |<%= link_to 'Back', shops_path %>
+
+<%= paginate @user %>

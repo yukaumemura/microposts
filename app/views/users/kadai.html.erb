@@ -1,28 +1,4 @@
-<h1>Lesson7</h1>
-<h3>ツイッタークローン</h3>
-
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
-   </div>
-<% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Microposts</h1>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
-<% end %>
+<%= render 'info/kadai' %>
 <h2>レッスン７　課題：オリジナル機能追加とHerokuへのデプロイ</h2>
 <div class="panel panel-default">
   <div class="panel-heading">（製作条件）<a href="https://git.heroku.com/safe-tor-23114.git">Heroku上のWebアプリケーションにアクセスする</a></div>
@@ -81,4 +57,3 @@
 		</tr>
 	</tbody>
 </table>
-
