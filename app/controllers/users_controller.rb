@@ -1,11 +1,13 @@
-class UsersController < ApplicationController
+   class UsersController < ApplicationController
+  before_action :correct_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
   
    def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.order(created_at: :desc)
+    @microposts = @user.microposts.order(created_at: :desc).page(params[:page])
   end
   
  def edit
@@ -34,7 +36,6 @@ end
     end
   end
   
-  before_action :correct_user, only: [:edit, :update]
   
   def followings
       @user = User.find(params[:id])

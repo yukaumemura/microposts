@@ -1,7 +1,22 @@
-<li><%= link_to "UserProfile", current_user %></li>
 <h1 class="followingfolower">followers list</h1>
-<% @followers.each do |user| %>
-   <%= gravatar_for(user) %>
-   <%= user.name %>
-   <br>
-<% end %>
+<h2>user/followers.html.erb</h2>
+<li><%= link_to "UserProfile", current_user %></li>
+<div class="col-xs-6 col-sm-push-3">
+　<div class="panel panel-default">
+  　<div class="panel-heading">現在、あなたをフォローされてる人です</div>
+      <table class="table table-hover">
+       <tbody>
+    	　　<tr>
+    	　　　<th>写真</th>
+    	　　　<th>名前</th>
+    	　　</tr>
+    	　　　<tr>
+    	　　　<% @followers.each do |user| %>
+        		<td><%= gravatar_for(user) %></td>
+        		<td><%= user.name %></td>
+        	</tr>
+ 　　　　　　<% end %>
+    	</tbody>
+  　</table>
+   </div>
+</div>
